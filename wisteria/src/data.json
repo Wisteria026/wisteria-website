@@ -1,0 +1,38 @@
+{
+  "navigation": {
+    "en": {
+      "home": "home",
+      "accomodation": "accomodation",
+      "gallery": "gallery",
+      "contact": "contact"
+    },
+    "sr": {
+      "home": "početna",
+      "accomodation": "smeštaj",
+      "gallery": "galerija",
+      "contact": "kontakt"
+    }
+  },
+  "homepage": {
+    "hero": {
+      "heading": {
+        "en": "Feel the Danube flow!",
+        "sr": "Oseti Dunav (ili sta god)!"
+      },
+      "button": {
+        "en": "Book Now!",
+        "sr": "Rezerviši"
+      }
+    },
+    "about": {
+      "title": {
+        "en": "Amazing place on the Danube",
+        "sr": "PRedivno mesto na Dunavu"
+      },
+      "text": {
+        "en": "AMzing place baslkdbl kalabsdl blabslbd labsldb lsabdsjabdl baslbdlsabdjlsab dljba sadlasbdlbsa lsbdlab dlasbdl asldblsab",
+        "sr": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    }
+  }
+}
