@@ -33,6 +33,29 @@
         "en": "AMzing place baslkdbl kalabsdl blabslbd labsldb lsabdsjabdl baslbdlsabdjlsab dljba sadlasbdlbsa lsbdlab dlasbdl asldblsab",
         "sr": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       }
-    }
+    },
+    "testimonials": [
+      {
+        "text": {
+          "en": "really amazing place, loved it!",
+          "sr": "Sjajno mesto i sjajni doamcini"
+        },
+        "name": "Ivan"
+      },
+      {
+        "text": {
+          "en": "Looking forward to return to it!",
+          "sr": "Nova druga osoba"
+        },
+        "name": "Petar"
+      },
+      {
+        "text": {
+          "en": "This is the third compliment!",
+          "sr": "Treca osoba"
+        },
+        "name": "Nina"
+      }
+    ]
   }
 }

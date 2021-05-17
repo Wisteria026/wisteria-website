@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import HeroImg from "../../../img/hero.jpeg";
+import HeroImg from "../../../img/hero.jpg";
 
 const Hero = ({ colors, data, lang }) => {
   console.log(data.heading["en"]);
@@ -42,12 +42,13 @@ const HeroContainer = styled.div`
     padding: 1rem 5rem;
     font-size: 18px;
     font-weight: bold;
-    border: 3px solid ${(props) => props.colors.purple};
+    border: 3px solid black;
     background: transparent;
   }
 
   button:hover {
-    background: rgba(250, 250, 250, 0.7);
+    background: rgba(250, 250, 250, 0.8);
     font-weight: bold;
+    border-color: white;
   }
 `;

@@ -1,28 +1,39 @@
 import styled from "styled-components";
 
-import Hero from "../../../img/hero.jpeg";
+import View from "../../../img/the_view.jpg";
+import Belgrade from "../../../img/belgrade.jpeg";
 import Content from "../../global/content";
 
-const About = ({ lang, data }) => {
+const About = ({ lang, data, colors }) => {
   return (
     <AboutContainer>
       <h2>{data.title[lang]}</h2>
       <p>{data.text[lang]}</p>
       <AboutDetail>
         <SingleItem>
-          <p>
-            Mislio sam da ovde ide slika nekog pogleda na Dunav- kao fora
-            priroda i to. I da se napiše rečenica/dve o tome kako je raj na
-            zemlji, mirno, priroda bla bla bla.
-          </p>
-          <img src={Hero} />
+          <SingleItemText colors={colors}>
+            <h3>Raj u prirodi</h3>
+            <p>
+              Mislio sam da ovde ide slika nekog pogleda na Dunav- kao fora
+              priroda i to. I da se napiše rečenica/dve o tome kako je raj na
+              zemlji, mirno, priroda bla bla bla.
+            </p>
+          </SingleItemText>
+          <img src={View} />
         </SingleItem>
         <SingleItem>
-          <img src={Hero} />
-          <p>
-            Ovde bih napisao koliko je blizu Smederevu i Bg/u, kapiram da je i
-            to ljudima bitno. Takođe, opet dve/tri rečenice i o tome.
-          </p>
+          <img src={Belgrade} />
+          <SingleItemText colors={colors}>
+            <h3>Na samo pola sata od Beograda</h3>
+            <p>
+              Ovde bih napisao koliko je blizu Smederevu i Bg/u, kapiram da je i
+              to ljudima bitno. Takođe, opet dve/tri rečenice i o tome.
+            </p>
+            <p>
+              Ovde bih napisao koliko je blizu Smederevu i Bg/u, kapiram da je i
+              to ljudima bitno. Takođe, opet dve/tri rečenice i o tome.
+            </p>
+          </SingleItemText>
         </SingleItem>
       </AboutDetail>
     </AboutContainer>
@@ -52,13 +63,28 @@ const SingleItem = styled.div`
   text-align: center;
   align-items: center;
 
-  p {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
   img {
     width: 50%;
     height: 100%;
+  }
+`;
+
+const SingleItemText = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 25px;
+    color: ${(props) => props.colors.lightBrown};
+  }
+
+  p {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 `;

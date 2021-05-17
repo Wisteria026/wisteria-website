@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import window from "global";
 
-import logo from "../../img/logo.jpg";
+import logo from "../../img/Logo-regular-transparent.png";
 import Serbian from "../../img/serbian.png";
 import English from "../../img/english.png";
 
@@ -68,8 +68,10 @@ const Navigation = ({ setLang, lang, data, colors }) => {
           <a href="#">{data[lang].gallery}</a>
           <a href="#">{data[lang].contact}</a>
           <select value={lang} onChange={handleLangChange}>
-            <option value="sr">🇷🇸&emsp;Srpski</option>
-            <option value="en">🇬🇧&emsp;English</option>
+            {/* <option value="sr">🇷🇸&emsp;Srpski</option>
+            <option value="en">🇬🇧&emsp;English</option> */}
+            <option value="sr">SR</option>
+            <option value="en">EN</option>
           </select>
         </NavLinks>
       </AltNav>
@@ -119,8 +121,8 @@ const Nav = styled.div`
   }
 
   .logo {
-    width: 100px;
-    height: 50px;
+    width: 200px;
+    height: 70px;
   }
 
   select {
@@ -147,8 +149,8 @@ const AltNav = styled.div`
   top: 0;
 
   .logo {
-    width: 100px;
-    height: 50px;
+    width: 250px;
+    height: 100px;
   }
   select {
     height: 25px;
@@ -176,7 +178,7 @@ const NavLinks = styled.div`
     display: block;
     width: 0;
     height: 3px;
-    background: ${(props) => props.colors.purple};
+    background: ${(props) => props.colors.lightBrown};
     transition: width 0.3s;
   }
 
