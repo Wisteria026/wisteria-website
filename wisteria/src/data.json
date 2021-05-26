@@ -2,13 +2,13 @@
   "navigation": {
     "en": {
       "home": "home",
-      "accomodation": "accomodation",
+      "accomodation": "accommodation",
       "gallery": "gallery",
       "contact": "contact"
     },
     "sr": {
       "home": "početna",
-      "accomodation": "smeštaj",
+      "accommodation": "smeštaj",
       "gallery": "galerija",
       "contact": "kontakt"
     }

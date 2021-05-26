@@ -4,6 +4,8 @@ import Content from "../../global/content";
 import Arrow from "../../../img/arrow.png";
 import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 
+import W from "../../../img/logo-transparent.png";
+
 import Slider from "react-slick";
 
 const NextArrow = (props) => {
@@ -60,6 +62,7 @@ const Testimonials = ({ lang, colors, data }) => {
   };
   return (
     <TestimonialsContainer colors={colors}>
+      <BackgroundImg background={W}></BackgroundImg>
       <SliderContainer colors={colors}>
         <Slider {...settings}>
           {/* mapping around testimonials array from data.json*/}
@@ -145,4 +148,17 @@ const SliderContainer = styled.div`
     right: 3rem;
     bottom: 2rem;
   }
+`;
+
+const BackgroundImg = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-image: url(${(props) => props.background});
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.1;
 `;

@@ -63,8 +63,8 @@ const Navigation = ({ setLang, lang, data, colors }) => {
           <img className="logo" src={logo} />
         </a>
         <NavLinks colors={colors}>
-          <a href="#">{data[lang].home}</a>
-          <a href="#">{data[lang].accomodation}</a>
+          <a href="/">{data[lang].home}</a>
+          <a href="/accommodation">{data[lang].accommodation}</a>
           <a href="#">{data[lang].gallery}</a>
           <a href="#">{data[lang].contact}</a>
           <select value={lang} onChange={handleLangChange}>

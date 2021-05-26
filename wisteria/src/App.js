@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { Global, css } from "@emotion/react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import Home from "./components/pages/home/home";
 import Navigation from "./components/global/Navigation";
-import Hero from "./components/pages/home/hero";
-import About from "./components/pages/home/About";
-import Testimonials from "./components/pages/home/testimonials";
 import Footer from "./components/global/footer";
 
 import Data from "./data.json";
+import Accommodation from "./components/pages/accommodation";
 
 function App() {
   const [lang, setLang] = useState("sr");
@@ -30,6 +30,10 @@ function App() {
             margin: 0;
             padding: 0;
           }
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
           body {
             overflow-x: hidden;
           }
@@ -38,20 +42,26 @@ function App() {
           }
         `}
       />
-
       <Navigation
         setLang={setLang}
         lang={lang}
         data={Data.navigation}
         colors={colors}
       />
-      <Hero colors={colors} data={Data.homepage.hero} lang={lang} />
-      <About lang={lang} data={Data.homepage.about} colors={colors} />
-      <Testimonials
-        lang={lang}
-        colors={colors}
-        data={Data.homepage.testimonials}
-      />
+      <Router>
+        <Switch>
+          <Route path="/accommodation">
+            <Accommodation
+              data={Data.accommodation}
+              lang={lang}
+              colors={colors}
+            />
+          </Route>
+          <Route path="/">
+            <Home data={Data.homepage} lang={lang} colors={colors} />
+          </Route>
+        </Switch>
+      </Router>
       <Footer lang={lang} colors={colors} data={Data.navigation} />
     </>
   );
