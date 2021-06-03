@@ -3,8 +3,6 @@ import styled from "styled-components";
 import window from "global";
 
 import logo from "../../img/Logo-regular-transparent.png";
-import Serbian from "../../img/serbian.png";
-import English from "../../img/english.png";
 
 const Navigation = ({ setLang, lang, data, colors }) => {
   const [padding, setPadding] = useState("3rem");
@@ -14,8 +12,7 @@ const Navigation = ({ setLang, lang, data, colors }) => {
     setLang(e.target.value);
   };
 
-  console.log(Serbian);
-  useEffect(() => {
+  const handleScroll = () => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 80) {
         setPadding("1.25rem");
@@ -25,39 +22,14 @@ const Navigation = ({ setLang, lang, data, colors }) => {
         setBackground("transparent");
       }
     });
-    //return window.removeEventListener("scroll", SetEvent);
+  };
+
+  useEffect(() => {
+    handleScroll();
+    return window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
     <>
-      {/*<Nav padding={padding} background={background} colors={colors}>
-      <ul>
-        <li>
-          <a href="#">{data[lang].home}</a>
-        </li>
-        <li>
-          <a href="#">{data[lang].accomodation}</a>
-        </li>
-        <li>
-          <a href="/">
-            <img className="logo" src={logo} />
-          </a>
-        </li>
-        <li>
-          <a href="#">{data[lang].gallery}</a>
-        </li>
-        <li>
-          <a href="#">{data[lang].contact}</a>
-        </li>
-      </ul>
-      <select value={lang} onChange={handleLangChange}>
-        <option value="sr">
-          🇷🇸&emsp;Srpski
-        </option>
-        <option value="en">
-          🇬🇧&emsp;English
-        </option>
-      </select>
-  </Nav> */}
       <AltNav padding={padding} background={background} colors={colors}>
         <a href="/">
           <img className="logo" src={logo} />
@@ -65,11 +37,9 @@ const Navigation = ({ setLang, lang, data, colors }) => {
         <NavLinks colors={colors}>
           <a href="/">{data[lang].home}</a>
           <a href="/accommodation">{data[lang].accommodation}</a>
-          <a href="#">{data[lang].gallery}</a>
-          <a href="#">{data[lang].contact}</a>
+          <a href="/gallery">{data[lang].gallery}</a>
+          <a href="contact">{data[lang].contact}</a>
           <select value={lang} onChange={handleLangChange}>
-            {/* <option value="sr">🇷🇸&emsp;Srpski</option>
-            <option value="en">🇬🇧&emsp;English</option> */}
             <option value="sr">SR</option>
             <option value="en">EN</option>
           </select>

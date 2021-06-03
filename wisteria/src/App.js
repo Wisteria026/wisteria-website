@@ -11,9 +11,15 @@ import Footer from "./components/global/footer";
 
 import Data from "./data.json";
 import Accommodation from "./components/pages/accommodation";
+import Gallery from "./components/pages/gallery";
+import Contact from "./components/pages/contact";
 
 function App() {
+  let defaultLang;
   const [lang, setLang] = useState("sr");
+  //defaultLang = typeof lang !== "undefined" ? lang : "sr";
+  //setLang(defaultLang);
+
   const colors = {
     purple: "#f4ecf8",
     lightBrown: "rgb(216,194,157)",
@@ -56,6 +62,12 @@ function App() {
               lang={lang}
               colors={colors}
             />
+          </Route>
+          <Route path="/gallery">
+            <Gallery lang={lang} colors={colors} />
+          </Route>
+          <Route path="/contact">
+            <Contact lang={lang} colors={colors} />
           </Route>
           <Route path="/">
             <Home data={Data.homepage} lang={lang} colors={colors} />

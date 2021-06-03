@@ -4,7 +4,7 @@ import Content from "../../global/content";
 import Arrow from "../../../img/arrow.png";
 import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 
-import W from "../../../img/logo-transparent.png";
+import Entrance from "../../../img/entrance.jpeg";
 
 import Slider from "react-slick";
 
@@ -62,7 +62,7 @@ const Testimonials = ({ lang, colors, data }) => {
   };
   return (
     <TestimonialsContainer colors={colors}>
-      <BackgroundImg background={W}></BackgroundImg>
+      <BackgroundImg background={Entrance}></BackgroundImg>
       <SliderContainer colors={colors}>
         <Slider {...settings}>
           {/* mapping around testimonials array from data.json*/}
@@ -140,6 +140,13 @@ const SliderContainer = styled.div`
   .slick-next:before {
     content: "" !important;
   }
+  .slick-prev:hover,
+  .slick-next:hover {
+    img {
+      background: white;
+      border-radius: 50%;
+    }
+  }
 
   h6 {
     font-size: 14px !important;
@@ -160,5 +167,5 @@ const BackgroundImg = styled.div`
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
-  opacity: 0.1;
+  opacity: 0.3;
 `;

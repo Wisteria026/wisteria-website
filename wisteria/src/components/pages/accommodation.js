@@ -9,6 +9,7 @@ import Kitchen from "../../img/kitchen.jpg";
 import Content from "../global/content";
 
 const Accommodation = ({ lang, data, colors }) => {
+  console.log(lang);
   return (
     <>
       <AccommodationHero background={AccommodationHeroImg}></AccommodationHero>

@@ -23,7 +23,7 @@ const Footer = ({ colors, lang, data }) => {
         <NavigationLinks colors={colors}>
           <p>Sadrzaj</p>
           <a href="#">{data[lang].home}</a>
-          <a href="#">{data[lang].accomodation}</a>
+          <a href="#">{data[lang].accommodation}</a>
           <a href="#">{data[lang].gallery}</a>
           <a href="#">{data[lang].contact}</a>
           <p>Phone: xxxxxxxxx</p>
