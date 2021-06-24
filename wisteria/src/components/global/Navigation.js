@@ -9,6 +9,7 @@ const Navigation = ({ setLang, lang, data, colors }) => {
   const [background, setBackground] = useState("transparent");
 
   const handleLangChange = (e) => {
+    localStorage.setItem("lang", e.target.value);
     setLang(e.target.value);
   };
 

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import HeroImg from "../../../img/hero.jpg";
 
 const Hero = ({ colors, data, lang }) => {
-  console.log(data.heading["en"]);
   return (
     <HeroContainer background={HeroImg} colors={colors}>
       <h1>{data.heading[lang]}</h1>

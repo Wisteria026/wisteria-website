@@ -2,10 +2,17 @@ import styled from "styled-components";
 import Slider from "react-slick";
 
 import Frame from "../../img/wisteria-frame.jpeg";
+import Content from "../global/content";
 
 import Kitchen from "../../img/kitchen.jpg";
 import Stairs from "../../img/stairs.jpg";
 import Room from "../../img/room_upstairs.jpeg";
+import LivingRoom from "../../img/accommodation.jpg";
+import Bathroom from "../../img/bathroom.jpg";
+import BathroomUpstairs from "../../img/bathroom_upstairs.jpg";
+import View from "../../img/view.JPG";
+import Bedroom from "../../img/bedroom.JPG";
+import TV from "../../img/tv.JPG";
 
 import Arrow from "../../img/arrow.png";
 
@@ -52,7 +59,17 @@ const PrevArrow = (props) => {
 
 const Gallery = ({ colors, lang }) => {
   console.log(colors);
-  const photos = [Kitchen, Stairs, Room];
+  const photos = [
+    Kitchen,
+    Stairs,
+    Room,
+    Bathroom,
+    LivingRoom,
+    BathroomUpstairs,
+    View,
+    Bedroom,
+    TV,
+  ];
   var settings = {
     dots: true,
     infinite: true,
@@ -65,14 +82,19 @@ const Gallery = ({ colors, lang }) => {
   return (
     <GalleryContainer colors={colors}>
       <h1>Gallery</h1>
-      <FrameBackground background={Stairs}></FrameBackground>
-      <SliderContainer colors={colors}>
+      <FrameBackground background={Stairs} />
+      <ImgContainer>
+        {photos.map((el, ind) => {
+          return <img key={ind} alt="some img" src={el} />;
+        })}
+      </ImgContainer>
+      {/*<SliderContainer colors={colors}>
         <Slider {...settings}>
           {photos.map((el, ind) => {
             return <Slide background={el} key={ind} colors={colors}></Slide>;
           })}
         </Slider>
-      </SliderContainer>
+        </SliderContainer>*/}
     </GalleryContainer>
   );
 };
@@ -85,7 +107,7 @@ const GalleryContainer = styled.div`
   margin-bottom: 1rem;
   position: relative;
   width: 100%;
-  height: 650px;
+  min-height: 650px;
   padding-top: 50px;
   padding-bottom: 100px;
   background: rgba(0, 0, 0, 0.6);
@@ -156,4 +178,16 @@ const FrameBackground = styled.div`
   background-position: center;
   background-size: cover;
   opacity: 0.1;
+`;
+
+const ImgContainer = styled(Content)`
+  display: flex;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 280px;
+    width: auto;
+    height: 280px;
+    margin: 1rem;
+  }
 `;

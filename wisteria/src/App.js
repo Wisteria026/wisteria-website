@@ -14,12 +14,23 @@ import Accommodation from "./components/pages/accommodation";
 import Gallery from "./components/pages/gallery";
 import Contact from "./components/pages/contact";
 
+import Page from "./components/pages/page";
+
 function App() {
   let defaultLang;
-  const [lang, setLang] = useState("sr");
+  if (localStorage.getItem("lang") === null) {
+    localStorage.setItem("lang", "sr");
+  }
+  console.log("lang je " + localStorage.getItem("lang"));
+  const [lang, setLang] = useState(localStorage.getItem("lang"));
   //defaultLang = typeof lang !== "undefined" ? lang : "sr";
   //setLang(defaultLang);
+  console.log("rendered");
 
+  useEffect(() => {
+    defaultLang = lang;
+    console.log(defaultLang);
+  });
   const colors = {
     purple: "#f4ecf8",
     lightBrown: "rgb(216,194,157)",

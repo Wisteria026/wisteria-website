@@ -50,7 +50,6 @@ const PrevArrow = (props) => {
 };
 
 const Testimonials = ({ lang, colors, data }) => {
-  console.log(data);
   var settings = {
     dots: true,
     infinite: true,
